@@ -1,1 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Mol Collection</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf5;
+            color: #4a3b32;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #8b6f47;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffe0b2;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(
+                rgba(255, 250, 245, 0.9),
+                rgba(255, 250, 245, 0.9)
+            );
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #6b4f35;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #8b6f47;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #6b4f35;
+        }
+
+        /* TENTANG */
+        section {
+            padding: 70px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul h2 {
+            font-size: 32px;
+            color: #6b4f35;
+            margin-bottom: 10px;
+        }
+
+        .tentang {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* PRODUK */
+        #produk {
+            background-color: #f5eadf;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .produk {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .produk .gambar {
+            height: 200px;
+            background-color: #e7d3bd;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .produk .gambar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .produk h3 {
+            color: #6b4f35;
+            margin-bottom: 10px;
+        }
+
+        .harga {
+            color: #a36f3f;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        /* KEUNGGULAN */
+        .keunggulan-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .keunggulan {
+            width: 250px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .keunggulan .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .keunggulan h3 {
+            margin-bottom: 10px;
+            color: #6b4f35;
+        }
+
+        /* KONTAK */
+        #kontak {
+            background-color: #f5eadf;
+        }
+
+        .kontak {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .kontak a {
+            color: #8b6f47;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #6b4f35;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .produk-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>D'Mol Home Made</h2>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- BERANDA -->
+    <section class="hero" id="beranda">
+        <div>
+            <h1>D'Mol Collection</h1>
+            <p>Kerajinan Tangan Dibuat Dengan Cinta, Kreativitas, dan Sentuhan Pribadi.</p>
+            <a href="#produk" class="btn">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section id="tentang">
+        <div class="judul">
+            <h2>Tentang Produk</h2>
+            <p>Kenalan dengan D'Mol Collection</p>
+        </div>
+        <div class="tentang">
+            <p>D'Mol Collection adalah usaha rumahan yang dibuat sejak Tahun 2011. Usaha ini menyediakan berbagai macam produk kerajinan tangan yang dibuat secara handmade. Selamat Datang di Ruang Karya Handmade. Temukan berbagai kerajinan unik yang dibuat secara handmade dengan ketelitian dan kreativitas. Setiap produk kami dibuat dengan sentuhan tangan dan hati, sehingga memiliki keunikan tersendiri.</p>
+            <br>
+            <p>Setiap produk dibuat dengan penuh cinta dan kreativitas sehingga memiliki makna tersendiri. Cocok digunakan untuk kebutuhan pribadi maupun sebagai hadiah untuk orang tersayang. Kami percaya bahwa sebuah karya tidak hanya memiliki nilai keindahan, tetapi juga memiliki cerita ketulusan dibalik proses pembuatannya.</p>
+        </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section id="produk">
+        <div class="judul">
+            <h2>Produk D'Mol Collection</h2>
+            <p>Beberapa produk handmade pilihan</p>
+        </div>
+
+        <div class="produk-container">
+
+            <div class="produk">
+                <div class="gambar">
+                    <!-- Ganti foto1.jpg dengan nama file foto tas kamu di GitHub -->
+                    <img src="foto1.jpg" alt="Tas Purun Hias">
+                </div>
+                <h3>Tas Purun Hias</h3>
+                <p>Tas Purun Handmade dengan hiasan yang berbeda dan cantik..</p>
+                <p class="harga">Rp150.000</p>
+                <a href="Pesan"></a>
+            </div>
+
+            <div class="produk">
+                <div class="gambar">
+                    <!-- Ganti foto2.jpg dengan nama file foto gantungan kunci di GitHub -->
+                    <img src="foto2.jpg" alt="Gantungan Kunci">
+                </div>
+                <h3>Gantungan Kunci</h3>
+                <p>Gantungan kunci dengan berbagai model dan memiliki kreativitas yang berbeda.</p>
+                <p class="harga">Rp15.000</p>
+                <a href="Pesan"></a>
+            </div>
+
+            <div class="produk">
+                <div class="gambar">
+                    <!-- Ganti foto3.jpg dengan nama file foto gelang di GitHub -->
+                    <img src="foto3.jpg" alt="Gelang Manik">
+                </div>
+                <h3>Gelang Manik</h3>
+                <p>Gelang manik ini dibuat dengan berbagai macam warna, bentuk, dan hiasan lainnya. Sehingga gelang tersebut memiliki kreativitas yang berbeda.</p>
+                <p class="harga">Rp5.000</p>
+                <a href="Pesan>"></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section>
+        <div class="judul">
+            <h2>Kenapa Memilih D'Mol Home Made?</h2>
+        </div>
+        <div class="keunggulan-container">
+            <div class="keunggulan">
+                <div class="icon">❤️</div>
+                <h3>Dibuat dengan Cinta</h3>
+                <p>Setiap produk dibuat dengan perhatian dan kreativitas yang berbeda.</p>
+            </div>
+            <div class="keunggulan">
+                <div class="icon">✨</div>
+                <h3>Unik dan Kreatif</h3>
+                <p>Produk memiliki desain yang unik dan menarik.</p>
+            </div>
+            <div class="keunggulan">
+                <div class="icon">🏠</div>
+                <h3>Usaha Rumahan</h3>
+                <p>Mendukung produk lokal dan usaha rumahan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak">
+        <div class="judul">
+            <h2>Hubungi Kami</h2>
+            <p>Ingin memesan produk handmade?</p>
+        </div>
+
+        <div class="kontak">
+            <p>📱 WhatsApp: <a href="https://wa.me/6287893512600" target="_blank">0878-9351-2600</a></p>
+            <p>📷 Instagram: <a href="https://instagram.com/d_mol_collection" target="_blank">@d_mol_collection</a></p>
+            <p>📧 Email: <a href="mailto:ronamerlin@gmail.com">ronamerlin@gmail.com</a></p>
+            <br>
+            <a href="https://wa.me/6287893512600?text=Halo%20D'Mol%20Collection,%20saya%20ingin%20bertanya/memesan" class="btn" target="_blank">Hubungi/Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 D'Mol Collection. Semua Hak Dilindungi.</p>
+    </footer>
+
+</body>
+</html>
